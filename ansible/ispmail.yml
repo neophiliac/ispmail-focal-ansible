@@ -6,9 +6,9 @@
   tasks:
     - name: "Checking operating system version"
       assert:
-        that: ansible_distribution_release == 'buster'
-        fail_msg: "This Ansible playbook is only supported on Debian Buster."
-        success_msg: "Debian Buster found - that makes me happy."
+        that: ansible_distribution_release == 'focal'
+        fail_msg: "This Ansible playbook is only supported on Ubuntu Focal."
+        success_msg: "Ubuntu Focal found - that makes me happy."
 
 - hosts: all
   roles:

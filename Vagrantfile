@@ -1,5 +1,5 @@
 Vagrant.configure(2) do |config|
-  config.vm.box = "debian/buster64"
+  config.vm.box = "ubuntu/focal64"
 
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "ansible/ispmail.yml"
@@ -16,6 +16,8 @@ Vagrant.configure(2) do |config|
   config.vm.network "forwarded_port", guest: 80, host: 10080
   # HTTPS
   config.vm.network "forwarded_port", guest: 443, host: 10443
+  # Submission
+  config.vm.network "forwarded_port", guest: 465, host: 10465
   # IMAP
   config.vm.network "forwarded_port", guest: 143, host: 10143
   # POP3
